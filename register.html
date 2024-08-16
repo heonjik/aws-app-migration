@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .centre {
+    text-align: center;
+    margin-top: 100px;
+    }
+    .message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: #940000;
+    }
+</style>
+    <body>
+    <div class="centre">
+        <h2>Sign Up</h2>
+        <p>Enter the new username and the password to register.</p>
+        {% if message %}
+            <div class="message">
+                {{ message }}
+            </div>
+        {% endif %}
+        <form method="post" action="{{ url_for('register') }}">
+            <label for="username">New Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">New Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <label for="password_confirm">Confirm Password:</label><br>
+            <input type="password" id="password_confirm" name="password_confirm"><br><br>
+            <button type="submit">Submit</button><br><br>
+        </form>
+        <form method="get" action="{{ url_for('home') }}">
+            <button type="submit">Home</button>
+        </form>
+    </div>
+    </body>
+</html>

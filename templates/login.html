@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .centre {
+    text-align: center;
+    margin-top: 100px;
+    }
+    .message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: #940000;
+    }
+</style>
+    <body>
+    <div class="centre">
+        <h2>Login</h2>
+        <p>Enter the username and the password to login.</p>
+        {% if message %}
+            <div class="message">
+                {{ message }}
+            </div>
+        {% endif %}
+        <form method="post" action="{{ url_for('login') }}">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Submit</button><br><br>
+        </form>
+        <form method="get" action="{{ url_for('home') }}">
+            <button type="submit">Home</button>
+        </form>
+    </div>
+    </body>
+</html>
